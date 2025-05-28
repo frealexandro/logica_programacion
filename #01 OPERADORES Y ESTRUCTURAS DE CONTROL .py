@@ -145,6 +145,54 @@ print(a >> b)
 print(a << b)
 
 
+
+
+#all: estructuras de control condicionales
+
+
+#! condicional if and elif , else
+my_string = "Santiago"
+
+if my_string == "Santiago":
+
+    print("my string is Santiago")
+
+elif my_string == "Novoa":
+
+    print("my string is Novoa")
+
+else:
+    print("no tengo ningun string")
+
+#all: estructuras de control iterativas
+
+#! estructura iterativa for 
+for i in range (11):
+    print(i)
+
+
+#! condicional while 
+i = 0
+
+while i <= 10 :
+    print(i)
+    i+=1
+
+#all: estructuras de control con excepciones 
+
+try:
+    print(10 / 0 )
+except:
+    print("se a producido un error")
+finally:
+    print("ha finalizado el manejo de excepciones \n")
+
+
+
+
+
+
+
 #  * DIFICULTAD EXTRA (opcional):
 #  * Crea un programa que imprima por consola todos los números comprendidos
 #  * entre 10 y 55 (incluidos), pares, y que no son ni el 16 ni múltiplos de 3.
