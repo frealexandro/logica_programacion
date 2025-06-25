@@ -106,5 +106,82 @@ datos_pesonales(
 
 )
 
-print ("Comprueba si puedes crear funciones dentro de funciones.")
+print ("Comprueba si puedes crear funciones dentro de funciones.\n")
+
+
+
+def funcion_principal_santiago():
+
+    def sub_functon_saludo():
+        print("hola como estas mi nombre es santiago\n")
+
+
+    def sub_function_edad():
+        print("mi edad es 23 años\n")
+
+    sub_functon_saludo()
+    sub_function_edad()
+
+
+funcion_principal_santiago()
+
+print("Utiliza algún ejemplo de funciones ya creadas en el lenguaje.(built in functions)\n")
+
+
+print(len("Santiago\n"))
+
+print(type("MOUREDEV\n"))
+
+print(type(6))
+
+print("santiago\n".upper())
+
+print("SANTIAGO\n".lower())
+
+print("Variables globales y locales\n")
+
+
+global_var = "santiago".upper()
+
+
+
+def saludo():
+    local_var = "paula"
+    print(f"Hola como estas {local_var}\n")
+
+
+
+
+print(global_var)
+
+#! esta variable solo funcina dentro dle scope de la funcion 
+#print(local_var)
+
+
+
+print("Parte extra para practicar logica\n")
+
+def imprimir_rango(primer_palabra , segunda_palabra):
+    
+    
+    for i in range (0, 100):
+
+        if i % 5 == 0 and i % 3 == 0 :
+
+            print( f"la concatenacion de las palabras es : {primer_palabra} + {segunda_palabra}")
+
+
+        elif i % 3 == 0 :
+
+            print (f"la primera palabra es {primer_palabra}")
+
+        elif i % 5 == 0 : 
+
+            print(f"la segunda palabra es {segunda_palabra}")
+
+        
+        else:
+            pass
+
+imprimir_rango("que es lo que es", "dimelo chamo")
 
