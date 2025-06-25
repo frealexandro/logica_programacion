@@ -91,3 +91,17 @@ def saludar(*names):
 
 saludar("santiago","paula", "el lobo the wall street")
 
+print("con un numero variable de argumentos \n con palabra clave \n")
+
+def datos_pesonales(**datos_personales):
+    for key , value in datos_personales.items():
+        print(f"este es el valor:  {value}\n de este item: {key} ")
+
+
+datos_pesonales(
+    nombre= "Santiago",
+    apellido= "Novoa",
+    alias= "mackey",
+    age=28
+
+)
