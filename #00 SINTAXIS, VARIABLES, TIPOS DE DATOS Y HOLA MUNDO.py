@@ -42,7 +42,7 @@ my_constante = "my_constante_1"
 
 #! texto 
 
-texto = 'hola undo'
+texto = 'hola mundo'
 
 #! entero
 
