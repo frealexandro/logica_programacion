@@ -105,3 +105,6 @@ datos_pesonales(
     age=28
 
 )
+
+print ("Comprueba si puedes crear funciones dentro de funciones.")
+
