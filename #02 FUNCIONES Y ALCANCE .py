@@ -154,7 +154,7 @@ def saludo():
 
 print(global_var)
 
-#! esta variable solo funcina dentro dle scope de la funcion 
+#! esta variable solo funcina dentro del scope de la funcion 
 #print(local_var)
 
 
