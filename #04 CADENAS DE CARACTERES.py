@@ -106,3 +106,27 @@ my_dict = dict(sorted(my_dict.items())) # sort
 print(my_dict)
 
 print(type(my_dict))
+
+
+print(" \n DIFICULTAD EXTRA (opcional): \n")
+#  * Crea un programa que analice dos palabras diferentes y realice comprobaciones
+#  * para descubrir si son:
+#  * - Palíndromos
+#  * - Anagramas
+#  * - Isogramas    
+
+
+def analyse_structure_data (p1 , p2):
+
+    p1 = p1.lower()
+    p2 = p2.lower()
+    
+    es_palindromo = p1 == p1[::-1] and p2 == p2[::-1]
+    es_anagrama = sorted(p1) == sorted(p2)
+    es_isograma = len(set(p1)) == len(p1) and len(set(p2)) == len(p2)
+
+    print(f"Palíndromos: {'Sí' if es_palindromo else 'No'}")
+    print(f"Anagramas: {'Sí' if es_anagrama else 'No'}")
+    print(f"Isogramas: {'Sí' if es_isograma else 'No'}")
+
+analyse_structure_data("amor" , "roma")
