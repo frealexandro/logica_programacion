@@ -126,8 +126,94 @@ print(type(my_dict))
 
 
 
+def es_telefono_valido(telefono):
+    return telefono.isdigit() and len(telefono) <= 11
 
-print(" \n DIFICULTAD EXTRA (opcional): \n")
+
+def mostrar_contactos(contactos):
+    if not contactos:
+        print("La agenda está vacía.")
+    else:
+        for nombre, telefono in contactos.items():
+            print(f"Nombre: {nombre} - Teléfono: {telefono}")
+
+
+def agenda_contactos(contactos, accion):
+    if accion == "1":  # Buscar
+        nombre = input("Nombre del contacto a buscar: ").strip().lower()
+        if nombre in contactos:
+            print(f"Teléfono de {nombre}: {contactos[nombre]}")
+        else:
+            print(f"No se encontró el contacto '{nombre}'.")
+
+    elif accion == "2":  # Agregar
+        nombre = input("Nombre del nuevo contacto: ").strip().lower()
+        if nombre in contactos:
+            print("Ese contacto ya existe.")
+        else:
+            telefono = input("Número de teléfono: ").strip()
+            if es_telefono_valido(telefono):
+                contactos[nombre] = telefono
+                print("Contacto agregado con éxito.")
+            else:
+                print("Número inválido. Debe ser numérico y de máximo 11 dígitos.")
+
+    elif accion == "3":  # Actualizar
+        nombre = input("Nombre del contacto a actualizar: ").strip().lower()
+        if nombre in contactos:
+            telefono = input("Nuevo número de teléfono: ").strip()
+            if es_telefono_valido(telefono):
+                contactos[nombre] = telefono
+                print("Contacto actualizado correctamente.")
+            else:
+                print("Número inválido. Debe ser numérico y de máximo 11 dígitos.")
+        else:
+            print("Ese contacto no existe.")
+
+    elif accion == "4":  # Eliminar
+        nombre = input("Nombre del contacto a eliminar: ").strip().lower()
+        if nombre in contactos:
+            del contactos[nombre]
+            print("Contacto eliminado.")
+        else:
+            print("Ese contacto no existe.")
+
+    elif accion == "5":  # Salir
+        print("Saliendo de la agenda...")
+        return False
+
+    else:
+        print("Opción no válida.")
+
+    return True
+
+
+def run():
+    contactos = {
+        "santiago": "3058195931"
+    }
+
+    while True:
+        print("""\n--- AGENDA DE CONTACTOS ---
+1. Buscar un contacto
+2. Agregar un contacto
+3. Actualizar un contacto
+4. Eliminar un contacto
+5. Salir
+----------------------------""")
+
+        accion = input("Selecciona una opción (1-5): ").strip()
+        continuar = agenda_contactos(contactos, accion)
+        if not continuar:
+            break
+
+
+if __name__ == '__main__':
+    run()
+
+
+
+
 
 
 
