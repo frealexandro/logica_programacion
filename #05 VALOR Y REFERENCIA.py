@@ -85,6 +85,9 @@ print(my_list_c)
 #  *   Comprueba también que se ha conservado el valor original en las primeras.
 #  */
 
+
+
+
 variable_valor_1 = 15
 variable_valor_2 = 20
 
@@ -107,10 +110,21 @@ print(f"El valor nuevo de la variable 1 es: {variable_valor_1} y el valor nuevo 
 
 
 
+variable_valor_1 = ["santiago" , "novoa"]
+variable_valor_2 = ["paula" , "gomez" ]
 
-
-
+print(f"Los valores de la variable 1 son: {variable_valor_1} y los valores de la variable 2 son: {variable_valor_2}")
 
 
 def funcion_por_referencia(variable_1 : list , variable_2: list ):
-    pass
+    
+    variable_valor_1_2 = variable_valor_2
+
+    variable_valor_2_1 = variable_valor_1
+
+    return variable_valor_1_2 , variable_valor_2_1
+    
+
+variable_valor_1 , variable_valor_2 = funcion_por_referencia(variable_valor_1 , variable_valor_2)
+
+print(f"Los nuevos valores de la variable 1 son: {variable_valor_1} y los nuevos valores de la variable 2 son: {variable_valor_2}")
